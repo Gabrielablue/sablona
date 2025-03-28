@@ -1,0 +1,45 @@
+{
+    "bannerText": "Vitajte na mojom portfóliu!",
+    "portfolioItems": [
+        {
+            "title": "Web stránka 1",
+            "image": "img/portfolio1.jpg",
+            "url": "https://example.com/project1"
+        },
+        {
+            "title": "Web stránka 2",
+            "image": "img/portfolio2.jpg",
+            "url": "https://example.com/project2"
+        },
+        {
+            "title": "Web stránka 3",
+            "image": "img/portfolio3.jpg",
+            "url": "https://example.com/project3"
+        },
+        {
+            "title": "Web stránka 4",
+            "image": "img/portfolio4.jpg",
+            "url": "https://example.com/project4"
+        },
+        {
+            "title": "Web stránka 5",
+            "image": "img/portfolio5.jpg",
+            "url": "https://example.com/project5"
+        },
+        {
+            "title": "Web stránka 6",
+            "image": "img/portfolio6.jpg",
+            "url": "https://example.com/project6"
+        },
+        {
+            "title": "Web stránka 7",
+            "image": "img/portfolio7.jpg",
+            "url": "https://example.com/project7"
+        },
+        {
+            "title": "Web stránka 8",
+            "image": "img/portfolio8.jpg",
+            "url": "https://example.com/project8"
+        }
+    ]
+}
