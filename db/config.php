@@ -5,5 +5,6 @@ define('DATABASE',[
     'DBNAME' => 'formular',
     'PORT' => '3306',
     'USER_NAME' => 'root',
-    'PASSWORD' => ''
+    'PASSWORD' => '',
 ]);
+?>
