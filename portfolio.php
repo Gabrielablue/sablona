@@ -1,18 +1,4 @@
-<?php
-// presmerovanie na funkcie:
-include 'funkcie.php';
-
-// Načítanie dát z JSON súboru
-$data = loadPortfolioData('data.json');
-
-// Načítanie portfóliových položiek a textu na banneri
-$portfolioItems = getPortfolioItems($data);
-$bannerText = getBannerText($data);
-
-// Generovanie HTML
-$portfolio = generatePortfolio($portfolioItems);
-?>
-
+<?php include 'funkcie.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

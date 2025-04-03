@@ -62,6 +62,7 @@ function getMenuData(string $type): array
     return $menu;
 }
 
+
 function printMenu(array $menu)
 {
     foreach ($menu as $menuName => $menuData) {
@@ -69,6 +70,7 @@ function printMenu(array $menu)
     }
 }
 
+// portfolio
 
 function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array{
     $portfolio = [];
@@ -81,6 +83,7 @@ function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array{
     }
     return $portfolio;
 }
+
 
 function finishPortfolio() {
     $portfolioData = preparePortfolio();
