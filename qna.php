@@ -18,6 +18,13 @@ include_once('parts/header.php');
 <?php
 include_once('parts/nav.php');
 ?>
+<?php
+include_once("classes/QnA.php");
+use otazkyodpovede\QnA;
+
+$qna = new QnA();
+$otazkyAOdpovede = $qna->getQnA();
+?>
   <main>
     <section class="banner">
       <div class="container text-white">
@@ -32,18 +39,14 @@ include_once('parts/nav.php');
       </div>
     </section>
       <section class="container">
-      <div class="accordion">
-        <div class="question">Otázka 1</div>
-        <div class="answer">Odpoveď 1</div>
-      </div>
-      <div class="accordion">
-        <div class="question">Otázka 2</div>
-        <div class="answer">Odpoveď 2</div>
-      </div>
-      <div class="accordion">
-        <div class="question">Otázka 3</div>
-        <div class="answer">Odpoveď 3</div>
-      </div>
+      <?php
+          foreach($otazkyAOdpovede as $item){
+          echo '<div class="accordion">';
+          echo '<div class="question">'.$item['otazka'].'</div>';
+          echo '<div class="answer">'.$item['odpoved'].'</div>';
+          echo '</div>';
+          }
+          ?>
     </section>
     </section>
   </div>

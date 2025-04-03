@@ -51,14 +51,14 @@ class QnA
 
     public function getQnA(){
         try {
-            $sql = "SELECT otazka, odpoved FROM qna"; // získa vsetky otázky a odpovede z tabulky qna
+            $sql = "SELECT otazka, odpoved FROM qna"; // týmto dokážeme získať otázky/odpovede z tabulky qna
             $statement = $this->conn->prepare($sql);
             $statement->execute();
-            // vráti všetky výsledky vo formáte asociatívneho poľa otazka =>odpoved
+            // vráti nám všetky výsledky vo formáte asociatívneho poľa otazka =>odpoved
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo "Chyba pri získaní qna: ". $e->getMessage();
-            $this->conn->rollBack(); //ak nastane chyba pocas transakcie, vráti všetky zmeny v db spat
+            $this->conn->rollBack(); //ak nastane chyba počas transakcie, vráti všetky zmeny v db späť
         }
     }
 }
