@@ -38,12 +38,13 @@ include_once('parts/nav.php');
 <main>
     <section class="banner">
         <div class="container text-white">
-            <h1><?php echo htmlspecialchars($bannerText); ?></h1> <!-- uprava ostatné v subore funkcie.php -->
+            <h1> Portfólio </h1>
         </div>
-    </section>
-            
-    <section class="container">
-        <?php echo $portfolio; ?> <!-- uprava - všetko zvyšné je v funkcie.php -->
+    </section> 
+    <section class="container" style="background-color: <?php echo $theme === "dark" ? "grey" :  "white"; ?>">
+        <?php
+        finishPortfolio();
+        ?>
     </section>
 </main>
 

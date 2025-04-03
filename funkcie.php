@@ -70,48 +70,34 @@ function printMenu(array $menu)
 }
 
 
-
-
-
-function loadPortfolioData($filePath) // funkcia na načítanie portfólia
-{
-    if (!file_exists($filePath)) {
-        return [];
-    }
-    $jsonData = file_get_contents($filePath); // načítanie json 
-    $data = json_decode($jsonData, true);
-    if ($data == null) {
-        return [];
-    }
-    return $data;
-}
-
-function getPortfolioItems($data)
-{
-    return $data['portfolioItems'] ?? [];
-}
-
-function generatePortfolio($portfolioItems) {
-    $html = '<section class="container">';
-    $html .= '<div class="row">';
-    if (!empty($portfolioItems)) {
-        foreach ($portfolioItems as $index => $item) {
-            $html .= '<div class="col-25 portfolio text-white text-center" id="portfolio-' . ($index + 1) . '">';
-            $html .= '<a href="' . htmlspecialchars($item['url']) . '" target="_blank" class="portfolio-link">';
-            $html .= '<h3>' . htmlspecialchars($item['title']) . '</h3>';
-            $html .= '</a>';
-            $html .= '</div>';
+function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array{
+    $portfolio = [];
+    $colIndex = 1;
+    for ($i = 1; $i <= $numberOfRows; $i++) {
+        for($j = 1; $j <= $numberOfCols; $j++) {
+            $portfolio[$i][$j] = $colIndex;
+            $colIndex++;
         }
-    } else {
-        $html .= '<p class="text-white">Žiadne portfólio</p>';
     }
-    $html .= '</div>';
-    $html .= '</section>';
-    return $html;
+    return $portfolio;
 }
-function getBannerText($data)
-{
-    return $data['bannerText'] ?? 'Portfólio'; //ternárny operátor - podmienka v 1 riadku
+
+function finishPortfolio() {
+    $portfolioData = preparePortfolio();
+    $data = json_decode(file_get_contents("data/datas.json"), true);
+    foreach ($portfolioData as $row => $col) {
+        echo '<div class="row">';
+        foreach ($col as $index) {
+            $text = $data["portfolio-text-url"]["portfolio{$index}.jpg"]["text"];
+            $link = $data["portfolio-text-url"]["portfolio{$index}.jpg"]["link"];
+            echo '<a id="portfolio-' . $index . '" class="col-25 portfolio" href="' . $link . '">';
+            echo '    <div class="text-center">';
+            echo          $text;
+            echo '    </div>';
+            echo '</a>';
+        }
+        echo '</div>';
+    }
 }
 
 ?>
