@@ -40,6 +40,18 @@
             "title": "Web stránka 8",
             "image": "img/portfolio8.jpg",
             "url": "https://example.com/project8"
+        },
+        {
+            "otazky": {
+                "1": "Otázka 1",
+                "2": "Otázka 2",
+                "3": "Otázka 3"
+            },
+            "odpovede": {
+                "1": "Odpoveď 1",
+                "2": "Odpoveď 2",
+                "3": "Odpoveď 3"
+            }
         }
     ]
 }
