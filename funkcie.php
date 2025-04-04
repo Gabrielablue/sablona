@@ -87,17 +87,26 @@ function preparePortfolio(int $numberOfRows = 2, int $numberOfCols = 4): array{
 
 function finishPortfolio() {
     $portfolioData = preparePortfolio();
-    $data = json_decode(file_get_contents("data/datas.json"), true);
-    foreach ($portfolioData as $row => $col) {
+    $data = json_decode(file_get_contents("data/data.json"), true);
+    $portfolioItems = $data["portfolioItems"];
+
+    $index = 0;
+    foreach ($portfolioData as $row => $cols) {
         echo '<div class="row">';
-        foreach ($col as $index) {
-            $text = $data["portfolio-text-url"]["portfolio{$index}.jpg"]["text"];
-            $link = $data["portfolio-text-url"]["portfolio{$index}.jpg"]["link"];
-            echo '<a id="portfolio-' . $index . '" class="col-25 portfolio" href="' . $link . '">';
-            echo '    <div class="text-center">';
-            echo          $text;
-            echo '    </div>';
-            echo '</a>';
+        foreach ($cols as $col) {
+            if (isset($portfolioItems[$index])) {
+                $item = $portfolioItems[$index];
+                $text = $item["title"];
+                $link = $item["url"];
+                $image = $item["image"];
+                echo '<a id="portfolio-' . ($index + 1) . '" class="col-25 portfolio" href="' . $link . '">';
+                echo '    <div class="text-center">';
+                echo '        <img src="' . $image . '" alt="' . $text . '" style="width: 250px;">';
+                echo '        <p>' . $text . '</p>';
+                echo '    </div>';
+                echo '</a>';
+            }
+            $index++;
         }
         echo '</div>';
     }
