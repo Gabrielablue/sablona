@@ -7,12 +7,12 @@ $meno = $_POST['meno'];
 $email = $_POST['email'];
 $sprava = $_POST['sprava'];
 
-// ak sú premenné prázdne
+// ak sú premenné prázdne, overenie údajov
 if (empty($meno) || empty($email) || empty($sprava)) {
     die("VŠetky polia sú povinné");
 }
 
-// nová inštancia triedy Contact
+// nová inštancia triedy Contact, uloženie správy do databázy
 
 $kontakt = new Contact();
 $ulozene = $kontakt->ulozSpravu($meno, $email, $sprava);
