@@ -20,7 +20,7 @@ include_once('parts/nav.php');
 ?>
     
     <main>
-      <section class="slides-container">
+      <section class="slides-container" style="background-color: <?php echo $theme === "dark" ? "grey" :  "white"; ?>">
         <div class="slide fade">
           <img src="img/banner1.jpg">
           <div class="slide-text">
@@ -46,7 +46,7 @@ include_once('parts/nav.php');
         <a id="next" class="next">❯</a>
         
       </section>
-      <section class="container">
+      <section class="container" style="background-color: <?php echo $theme === "dark" ? "grey" :  "white"; ?>">
         <div class="row">
           <div class="col-100 text-center">
           <?php
@@ -55,7 +55,7 @@ include_once('parts/nav.php');
           </div>
         </div>
       </section>
-      <section class="container">
+      <section class="container" style="background-color: <?php echo $theme === "dark" ? "grey" :  "white"; ?>">
         <div class="row">
           <div class="col-50">
             <h2>Mollit cupidatat velit quis irure non eiusmod culpa cillum velit magna est aliquip.</h2>
