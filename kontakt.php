@@ -33,7 +33,7 @@ include_once('parts/nav.php');
         </div>
       </div>
     </section>
-    <section class="container">
+    <section class="container" style="background-color: <?php echo $theme === "dark" ? "grey" :  "white"; ?>">
       <div class="row">
         <div class="col-50"> 
           <h3>Máte otázky?</h3>

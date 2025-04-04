@@ -101,8 +101,8 @@ function finishPortfolio() {
                 $image = $item["image"];
                 echo '<a id="portfolio-' . ($index + 1) . '" class="col-25 portfolio" href="' . $link . '">';
                 echo '    <div class="text-center">';
-                echo '        <img src="' . $image . '" alt="' . $text . '" style="width: 250px;">';
-                echo '        <p>' . $text . '</p>';
+                echo '        <img src="' . $image . '" alt="' . $text . '" style="width: 250px; height: 250px; object-fit: cover; border-radius: 10px;">';
+                echo '        <p style="text-align: center; margin-top: 10px;">' . $text . '</p>';
                 echo '    </div>';
                 echo '</a>';
             }
