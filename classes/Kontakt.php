@@ -31,7 +31,7 @@ public function ulozitSpravu($meno, $email, $sprava) {
 
     try {
         $insert = $statement->execute();
-        header("Location: http://localhost/cvicnasablona/thankyou.php");
+        header("Location: http://localhost/sablona/thankyou.php");
         http_response_code(200);
         return $insert;
     } catch (\Exception $exception) {

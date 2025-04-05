@@ -13,8 +13,8 @@ class QnA
         $config = DATABASE;
         $options = array(
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        );
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // vráti ako asociatívne pole, ked nenastavíme, vráti sa prvý riadok tabulky 
+        );                                                      // pozrieť prezentáciu 7 - podobné vyťahovanie z databázy budeme mať/musieť mať na projekte 
 
         try {
             $this->conn = new PDO('mysql:host='.$config['HOST'].';dbname='.$config['DBNAME'].';port='. $config['PORT'], $config['USER_NAME'],$config['PASSWORD'], $options);

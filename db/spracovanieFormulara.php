@@ -1,6 +1,6 @@
 <?php
 
-require_once("../classes/Contact.php");
+require_once("../classes/Kontakt.php");
 use formular\Contact;
 
 $meno = $_POST['meno'];
@@ -12,7 +12,7 @@ if (empty($meno) || empty($email) || empty($sprava)) {
     die("VŠetky polia sú povinné");
 }
 
-// nová inštancia triedy Contact, uloženie správy do databázy
+// nová inštancia triedy Kontakt, uloženie správy do databázy
 
 $kontakt = new Contact();
 $ulozene = $kontakt->ulozSpravu($meno, $email, $sprava);
