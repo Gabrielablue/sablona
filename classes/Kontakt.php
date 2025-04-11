@@ -1,16 +1,22 @@
 <?php
 
 namespace formular;
-require_once('../db/config.php');
-use PDO;
 
-class Kontakt{
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+if (!defined('__ROOT__')) {
+    define('__ROOT__', dirname(dirname(__FILE__)));
+}require_once (__ROOT__.'/classes/Database.php');
+
+
+class Kontakt extends \Database
+{
 
   private $conn;
   public function __construct() {
       $this->connect();
   }
-private function connect() {
+/*rivate function connect() {
     $config = DATABASE;
     $options = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -23,6 +29,7 @@ private function connect() {
         die("Chyba pripojenia: " . $e->getMessage());
     }
 }
+*/
 
 public function ulozitSpravu($meno, $email, $sprava) {
     $sql = "INSERT INTO kontakt_formular (meno, email, sprava) 
